@@ -1,18 +1,18 @@
+# Main function is called upon at the end of the file
 def main():
+    # Takes input from user of the amount of square feet, along with the cost of paint per square feet
     sqft =  float(input("Enter the amount of square feet of paint you need: "))
-    cost = float(input("Enter the cost of paint per square feet: "))
+    cost = float(input("Enter the cost of paint per gallon: "))
 
+    # Sets variables for each function
     gallonAmount = gallons(sqft)
     hoursAmount = hours(sqft)
     paintCostAmount = paintCost(gallonAmount, cost)
     laborCostAmount = laborCost(hoursAmount)
     totalCostAmount = totalCost(paintCostAmount, laborCostAmount)
 
-    print(f"You will require {gallonAmount:,.2f} gallons")
-    print(f"This will require {hoursAmount:,.2f} hours")
-    print(f"This leave the cost of paint to ${paintCostAmount:,.2f}.")
-    print(f"This leave the cost of labor to ${laborCostAmount:,.2f}.")
-    print(f"This leave the total cost of the total paint job to ${totalCostAmount:,.2f}.")
+    # Prints the amount of gallons, hours, paint cost, labor cost, and total cost seperated into seperate lines
+    print(f"You will require {gallonAmount:,.2f} gallons\nThis will require {hoursAmount:,.2f} hours\nThis leave the cost of paint to ${paintCostAmount:,.2f}.\nThis leave the cost of labor to ${laborCostAmount:,.2f}.\nThis leave the total cost of the total paint job to ${totalCostAmount:,.2f}.")
 
 
 # Returns gallons of paint required
