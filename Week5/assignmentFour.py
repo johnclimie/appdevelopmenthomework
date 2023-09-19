@@ -1,9 +1,23 @@
 def main():
-    pass
+    sqft =  float(input("Enter the amount of square feet of paint you need: "))
+    cost = float(input("Enter the cost of paint per square feet: "))
+
+    gallonAmount = gallons(sqft)
+    hoursAmount = hours(sqft)
+    paintCostAmount = paintCost(gallonAmount, cost)
+    laborCostAmount = laborCost(hoursAmount)
+    totalCostAmount = totalCost(paintCostAmount, laborCostAmount)
+
+    print(gallonAmount)
+    print(hoursAmount)
+    print(paintCostAmount)
+    print(laborCostAmount)
+    print(totalCostAmount)
+
 
 # Create function that returns gallons of paint required
 def gallons(sqft):
-    return sqft * 0.0089
+    return sqft * 0.0089285714285714
 
 # Create a funcion that returns hours of labor
 def hours(sqft):
@@ -20,3 +34,5 @@ def laborCost(hours):
 # Create a funciton that returns the total cost
 def totalCost(paintCost, hoursCost):
     return paintCost + hoursCost
+
+main()
