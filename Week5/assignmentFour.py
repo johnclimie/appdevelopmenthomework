@@ -8,11 +8,11 @@ def main():
     laborCostAmount = laborCost(hoursAmount)
     totalCostAmount = totalCost(paintCostAmount, laborCostAmount)
 
-    print(gallonAmount)
-    print(hoursAmount)
-    print(paintCostAmount)
-    print(laborCostAmount)
-    print(totalCostAmount)
+    print(f"You will require {gallonAmount:,.2f} gallons")
+    print(f"This will require {hoursAmount:,.2f} hours")
+    print(f"This leave the cost of paint to ${paintCostAmount:,.2f}.")
+    print(f"This leave the cost of labor to ${laborCostAmount:,.2f}.")
+    print(f"This leave the total cost of the total paint job to ${totalCostAmount:,.2f}.")
 
 
 # Create function that returns gallons of paint required
