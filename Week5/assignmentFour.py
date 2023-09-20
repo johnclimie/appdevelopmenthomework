@@ -1,3 +1,7 @@
+# John Climie
+# September 19th, 2023
+# Program returns the cost of paint, labor, total cost, gallons of paint, and hours required to paint a an amount of square feet input by the user
+
 # Main function is called upon at the end of the file
 def main():
     # Takes input from user of the amount of square feet, along with the cost of paint per square feet
