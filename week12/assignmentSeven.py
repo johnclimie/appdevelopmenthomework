@@ -33,4 +33,12 @@ class PhoneNumberConverter:
             newNum += self.numericConverter(char)
         return newNum
     
-    
+    def returnFinalNum(self, newNum):
+        finalNum = f"{newNum[:3]}-{newNum[3:6]}-{newNum[6:]}"
+        print("Final converted phone number:", finalNum)
+
+if __name__ == "__main__":
+    userInput = input("Enter 10 character phone number in the form of XXX-XXX-XXXX: ")
+
+    if len(userInput) == 12 and userInput[3] == '-' and userInput[7] == '-':
+        
