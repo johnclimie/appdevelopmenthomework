@@ -41,4 +41,8 @@ if __name__ == "__main__":
     userInput = input("Enter 10 character phone number in the form of XXX-XXX-XXXX: ")
 
     if len(userInput) == 12 and userInput[3] == '-' and userInput[7] == '-':
-        
+        numConverter = PhoneNumberConverter(userInput.replace("-", ""))
+        convertedNum = numConverter.convertNum()
+        numConverter.returnFinalNum(convertedNum)
+    else:
+        print("Input is invalid, please try again")
