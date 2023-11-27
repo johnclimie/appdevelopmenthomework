@@ -1,7 +1,7 @@
 dataList = []
 
 def readTxt():
-    txtFile = open('bodydat.txt', 'r')
+    txtFile = open('data.txt', 'r')
     for count in range(507):
         print(txtFile.readline())
 
