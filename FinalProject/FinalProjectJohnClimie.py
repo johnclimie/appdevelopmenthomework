@@ -3,9 +3,11 @@ dataList = []
 def readTxt():
     txtFile = open('data.txt', 'r')
     for count in range(507):
-        print(txtFile.readline())
+        dataList.append(txtFile.readline())
+    
+    txtFile.close()
 
-        txtFile.close()
+    
 
 def main():
     readTxt()
