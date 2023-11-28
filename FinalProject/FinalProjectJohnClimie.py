@@ -25,6 +25,7 @@ def storeBMIAgeWeightPhys():
         bmiList.append(calcBMI(tempString[22], tempString[23]))
         weightList.append(tempString[22])
         ageList.append(tempString[21])
+        physList.append(calcPhys(tempString[4], tempString[3], tempString[2], tempString[20], tempString[19], tempString[23]))
 
 
         
@@ -33,6 +34,8 @@ def storeBMIAgeWeightPhys():
 
 def main():
     readTxt()
+    storeBMIAgeWeightPhys()
+    print(physList)
 
 if __name__ == "__main__":
     main()
