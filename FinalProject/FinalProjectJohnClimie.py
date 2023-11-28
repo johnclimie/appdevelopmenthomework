@@ -18,6 +18,8 @@ def storeBMIAgeWeight():
     for count in range(507):
         tempString = dataList[count].split()
         bmiList.append(calcBMI(tempString[22], tempString[23]))
+        weightList.append(tempString[22])
+        ageList.append(tempString[21])
 
         
         
