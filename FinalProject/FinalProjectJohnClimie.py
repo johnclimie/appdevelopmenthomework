@@ -1,3 +1,5 @@
+import math
+
 dataList = []
 bmiList = []
 ageList = []
@@ -59,14 +61,19 @@ def calcIntercept(sumY, slope, sumX, count):
     calc = ((sumY - (slope*sumX))/count)
     return calc
 
+def calcCorr(count, sumXY, sumX, sumY, sumXSq, sumYSq):
+    calc = ((count*sumXY - (sumX*sumY)) / math.sqrt((count*sumXSq-(sumX)**2) * (count*sumYSq - (sumY)**2)))
+    return calc
+
 
 def main():
     readTxt()
     storeBMIAgeWeightPhys()
-    print(calcIntercept(calcSum(bmiList), calcSlope(N, calcXY(ageList, bmiList), calcSum(ageList), calcSum(bmiList), calcSumSq(ageList)), calcSum(ageList), N))
+    print(calcCorr(N, calcXY(ageList, bmiList), calcSum(ageList), calcSum(bmiList), calcSumSq(ageList), calcSumSq(bmiList)))
     
 if __name__ == "__main__":
     main()
 
 
 #     print(calcSlope(N, calcXY(ageList, bmiList), calcSum(ageList), calcSum(bmiList), calcSumSq(ageList)))
+#     print(calcIntercept(calcSum(bmiList), calcSlope(N, calcXY(ageList, bmiList), calcSum(ageList), calcSum(bmiList), calcSumSq(ageList)), calcSum(ageList), N))
