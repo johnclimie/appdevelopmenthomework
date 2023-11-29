@@ -8,7 +8,7 @@ N = 507
 
 def readTxt():
     txtFile = open('data.txt', 'r')
-    for count in range(507):
+    for count in range(N):
         dataList.append(txtFile.readline())
     
     txtFile.close()
@@ -26,7 +26,7 @@ def calcSum(list):
     return calc
 
 def storeBMIAgeWeightPhys():
-    for count in range(507):
+    for count in range(N):
         tempString = dataList[count].split()
         bmiList.append(calcBMI(tempString[22], tempString[23]))
         weightList.append(float(tempString[22]))
