@@ -55,10 +55,15 @@ def calcSlope(count, sumXY, sumX, sumY, sumXSq):
     calc = ((count * sumXY - (sumX * sumY))/(count * sumXSq - (sumX)**2))
     return calc
 
+def calcIntercept(sumY, slope, sumX, count):
+    calc = ((sumY - (slope*sumX))/count)
+    return calc
+
 
 def main():
     readTxt()
     storeBMIAgeWeightPhys()
+    print(calcIntercept(calcSum(bmiList), calcSlope(N, calcXY(ageList, bmiList), calcSum(ageList), calcSum(bmiList), calcSumSq(ageList)), calcSum(ageList), N))
     
 if __name__ == "__main__":
     main()
