@@ -69,7 +69,18 @@ def calcCorr(count, sumXY, sumX, sumY, sumXSq, sumYSq):
 def main():
     readTxt()
     storeBMIAgeWeightPhys()
-    print(calcCorr(N, calcXY(ageList, bmiList), calcSum(ageList), calcSum(bmiList), calcSumSq(ageList), calcSumSq(bmiList)))
+    
+    slopeAgeBMI = calcSlope(N, calcXY(ageList, bmiList), calcSum(ageList), calcSum(bmiList), calcSumSq(ageList))
+    interceptAgeBMI = calcIntercept(calcSum(bmiList), slopeAgeBMI, calcSum(ageList), N)
+    corrAgeBMI = calcCorr(N, calcXY(ageList, bmiList), calcSum(ageList), calcSum(bmiList), calcSumSq(ageList), calcSumSq(bmiList))
+
+    slopeWeightPhys = calcSlope(N, calcXY(weightList, physList), calcSum(weightList), calcSum(physList), calcSumSq(weightList))
+    interceptWeightPhys = calcIntercept(calcSum(physList), slopeWeightPhys, calcSum(weightList), N)
+    corrWeightPhys = calcCorr(N, calcXY(weightList, physList), calcSum(weightList), calcSum(physList), calcSumSq(weightList), calcSumSq(physList))
+
+    finalReturn = f"Results for Age and BMI: \nSlope: {slopeAgeBMI} \nIntercept: {interceptAgeBMI} \nSlope: {corrAgeBMI} \n\n\nResults for Weight and Physical Attributes: \nSlope: {slopeWeightPhys} \nIntercept: {interceptWeightPhys} \nSlope: {corrWeightPhys}"
+
+    print(finalReturn)
     
 if __name__ == "__main__":
     main()
@@ -77,3 +88,4 @@ if __name__ == "__main__":
 
 #     print(calcSlope(N, calcXY(ageList, bmiList), calcSum(ageList), calcSum(bmiList), calcSumSq(ageList)))
 #     print(calcIntercept(calcSum(bmiList), calcSlope(N, calcXY(ageList, bmiList), calcSum(ageList), calcSum(bmiList), calcSumSq(ageList)), calcSum(ageList), N))
+#     print(calcCorr(N, calcXY(ageList, bmiList), calcSum(ageList), calcSum(bmiList), calcSumSq(ageList), calcSumSq(bmiList)))
