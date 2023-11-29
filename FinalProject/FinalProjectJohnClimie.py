@@ -84,8 +84,3 @@ def main():
     
 if __name__ == "__main__":
     main()
-
-
-#     print(calcSlope(N, calcXY(ageList, bmiList), calcSum(ageList), calcSum(bmiList), calcSumSq(ageList)))
-#     print(calcIntercept(calcSum(bmiList), calcSlope(N, calcXY(ageList, bmiList), calcSum(ageList), calcSum(bmiList), calcSumSq(ageList)), calcSum(ageList), N))
-#     print(calcCorr(N, calcXY(ageList, bmiList), calcSum(ageList), calcSum(bmiList), calcSumSq(ageList), calcSumSq(bmiList)))
