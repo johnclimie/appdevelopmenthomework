@@ -25,17 +25,43 @@ def calcSum(list):
     calc = sum(list)
     return calc
 
+def calcSumSq(list):
+    tempList = []
+
+    for count in range(N):
+        tempList.append(list[count] ** 2)
+
+    sumList = sum(tempList)
+    return sumList
+
+def calcXY(list1, list2):
+    tempList = []
+    
+    for count in range(N):
+        tempList.append(list1[count] * list2[count])
+    
+    sumList = sum(tempList)
+    return sumList
+
 def storeBMIAgeWeightPhys():
     for count in range(N):
         tempString = dataList[count].split()
         bmiList.append(calcBMI(tempString[22], tempString[23]))
         weightList.append(float(tempString[22]))
         ageList.append(float(tempString[21]))
-        physList.append(calcPhys(tempString[4], tempString[3], tempString[2], tempString[20], tempString[19], tempString[23]))  
+        physList.append(calcPhys(tempString[4], tempString[3], tempString[2], tempString[20], tempString[19], tempString[23])) 
+
+def calcSlope(count, sumXY, sumX, sumY, sumXSq):
+    calc = ((count * sumXY - (sumX * sumY))/(count * sumXSq - (sumX)**2))
+    return calc
+
 
 def main():
     readTxt()
     storeBMIAgeWeightPhys()
-
+    
 if __name__ == "__main__":
     main()
+
+
+#     print(calcSlope(N, calcXY(ageList, bmiList), calcSum(ageList), calcSum(bmiList), calcSumSq(ageList)))
